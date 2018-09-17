@@ -75,11 +75,7 @@ export class DashboardComponent implements OnDestroy {
   };
 
   constructor(private themeService: NbThemeService) {
-    this.themeService.getJsTheme()
-      .pipe(takeWhile(() => this.alive))
-      .subscribe(theme => {
-        this.statusCards = this.statusCardsByThemes[theme.name];
-    });
+
   }
 
   ngOnDestroy() {

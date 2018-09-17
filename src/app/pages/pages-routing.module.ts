@@ -5,13 +5,21 @@ import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ECommerceComponent } from './e-commerce/e-commerce.component';
 import { NotFoundComponent } from './miscellaneous/not-found/not-found.component';
+import {LoginComponent} from './login/login.component';
+import {AuthGuard} from '../auth-guard.guard';
 
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
-  children: [{
+  children: [
+    {
+      path: 'login',
+      component: LoginComponent,
+    },
+    {
     path: 'dashboard',
     component: ECommerceComponent,
+    // canActivate: [AuthGuard],
   }, {
     path: 'iot-dashboard',
     component: DashboardComponent,
@@ -39,11 +47,8 @@ const routes: Routes = [{
   }, {
     path: 'miscellaneous',
     loadChildren: './miscellaneous/miscellaneous.module#MiscellaneousModule',
-  }, {
-    path: '',
-    redirectTo: 'dashboard',
-    pathMatch: 'full',
-  }, {
+  },
+    {
     path: '**',
     component: NotFoundComponent,
   }],

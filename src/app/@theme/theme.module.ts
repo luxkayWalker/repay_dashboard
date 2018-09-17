@@ -49,6 +49,7 @@ import {
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
+import {ClearLayoutComponent} from './layouts/clear/clear.layout';
 
 const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
 
@@ -84,6 +85,7 @@ const COMPONENTS = [
   SampleLayoutComponent,
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
+  ClearLayoutComponent,
 ];
 
 const ENTRY_COMPONENTS = [
@@ -101,7 +103,7 @@ const PIPES = [
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot(
     {
-      name: 'cosmic',
+      name: 'corporate',
     },
     [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME ],
   ).providers,
