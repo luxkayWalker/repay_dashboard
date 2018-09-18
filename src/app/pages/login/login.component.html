@@ -4,17 +4,18 @@
     <nb-card>
       <nb-card-header>Painel Administrativo rePay</nb-card-header>
       <nb-card-body>
+        <toaster-container [toasterconfig]="config"></toaster-container>
         <form class="form-horizontal">
           <div class="form-group row">
-            <label [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="col-sm-3 form-control-label">Email</label>
+            <label class="col-sm-3 form-control-label">Email</label>
             <div class="col-sm-9">
-              <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              <input type="email" [(ngModel)]="email" [ngModelOptions]="{standalone: true}" class="form-control" id="inputEmail3" placeholder="Email">
             </div>
           </div>
           <div class="form-group row">
-            <label [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" class="col-sm-3 form-control-label">Senha</label>
+            <label  class="col-sm-3 form-control-label">Senha</label>
             <div class="col-sm-9">
-              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+              <input type="password" [(ngModel)]="senha" [ngModelOptions]="{standalone: true}" class="form-control" id="inputPassword3" placeholder="Password">
             </div>
           </div>
           <div class="form-group row">

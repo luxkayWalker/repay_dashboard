@@ -9,15 +9,16 @@ export class AuthService {
   constructor(private api: ApiService) { }
 
   isLoggedIn() {
-    return false;
+    return localStorage.getItem('token') !== null;
   }
 
   loggin(credentials: Credentials) {
-    this.api.login(credentials).then((result) => {
-      debugger
-    }).catch((error) => {
+    return this.api.login(credentials).then((result) => this.onLogged(result));
+  }
 
-    });
+  onLogged(result: any) {
+    localStorage.setItem('token', result.token);
+    localStorage.setItem('user', result);
   }
 }
 

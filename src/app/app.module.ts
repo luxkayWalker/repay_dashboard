@@ -18,7 +18,7 @@ import { UserComponent } from './pages/user/user.component';
 import { TransactionsComponent } from './pages/transactions/transactions.component';
 import { CardsComponent } from './pages/cards/cards.component';
 import {LoginComponentModule} from './pages/login/login.component.module';
-import {AuthGuard} from './auth-guard.guard';
+import {AuthGuard} from './auth-guard.guard'
 
 @NgModule({
   declarations: [AppComponent, UserComponent, TransactionsComponent, CardsComponent],
